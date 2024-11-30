@@ -83,8 +83,7 @@ export default class WelcomeSettings extends AccountSettingsMixin {
         className={classes.join(" ")}
         onClick={this.handleSaveSettings}
       >
-        {text}
-      </button>
+        {text}</button>
     );
   }
 
@@ -104,7 +103,7 @@ export default class WelcomeSettings extends AccountSettingsMixin {
           }
         />
         <label htmlFor="use-contact-icons">
-          Use gravatar & duckduckgo for contact icons?
+          使用gravatar & duckduckgo作为联系人图标 ?
         </label>
       </small>
     );
@@ -114,7 +113,7 @@ export default class WelcomeSettings extends AccountSettingsMixin {
     return (
       <section className={window.KANMAIL_PLATFORM}>
         <header className="welcome-settings header-bar" ref={makeDragElement}>
-          <h2>Setup Kanmail</h2>
+          <h2>设置 Kanmail</h2>
         </header>
 
         <section id="welcome-settings">
@@ -122,11 +121,9 @@ export default class WelcomeSettings extends AccountSettingsMixin {
             <img src={img} width="48px" /> Kanmail
           </h2>
           <p>
-            Welcome to Kanmail. Setup one or more accounts below to start
-            managing your emails.
+            欢迎来到Kanmail。在下面设置一个或多个帐户以开始管理您的电子邮件。
             {this.renderSaveButton()}
-            {this.renderContactIconCheckbox()}
-          </p>
+            {this.renderContactIconCheckbox()}</p>
           <AccountList
             accounts={this.state.accounts}
             accountNameToConnected={this.state.accountNameToConnected}

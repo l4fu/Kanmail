@@ -290,18 +290,17 @@ export default class ThreadMessage extends React.Component {
       if (!this.state.alwaysShowImages) {
         return (
           <button onClick={this.handleClickAlwaysShowImages}>
-            Always show from this sender
-          </button>
+            始终显示此发件人</button>
         );
       } else {
         return (
-          <button onClick={this.handleClickHideImages}>Hide images</button>
+          <button onClick={this.handleClickHideImages}>隐藏图像</button>
         );
       }
     }
 
     return (
-      <button onClick={this.handleClickShowImages}>Show remote images</button>
+      <button onClick={this.handleClickShowImages}>显示远程图像</button>
     );
   }
 
@@ -313,16 +312,14 @@ export default class ThreadMessage extends React.Component {
         onClick={this.handleClickHtml}
         className={this.state.showPlainText ? "" : "active"}
       >
-        HTML
-      </button>
+        HTML</button>
     ) : null;
     const textToggle = message.body.text ? (
       <button
         onClick={this.handleClickText}
         className={this.state.showPlainText ? "active" : ""}
       >
-        Text
-      </button>
+        Text</button>
     ) : null;
 
     const isDraft = _.includes(_.keys(this.props.message.folderUids), "drafts");

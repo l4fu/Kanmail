@@ -50,7 +50,7 @@ class GenericAccountForm extends React.Component {
 
     if (!this.state.newAccountUsername || !this.state.newAccountPassword) {
       this.setState({
-        newAccountError: "Email or password missing!",
+        newAccountError: "缺少邮箱地址或者密码！",
       });
       return;
     }
@@ -110,7 +110,7 @@ class GenericAccountForm extends React.Component {
 
     if (!this.state.newAccountName) {
       this.setState({
-        newAccountError: "Please provide an account display name!",
+        newAccountError: "请填写邮箱的标记名称!",
       });
       return;
     }
@@ -133,7 +133,7 @@ class GenericAccountForm extends React.Component {
   renderTitle() {
     return (
       <h3>
-        <i className="fa fa-envelope" /> Add New Account
+        <i className="fa fa-envelope" /> 添加一个新账户
       </h3>
     );
   }
@@ -147,7 +147,7 @@ class GenericAccountForm extends React.Component {
       <div>
         {this.renderUnderTitle()}
         <div>
-          <label htmlFor="username">Email</label>
+          <label htmlFor="username">邮箱</label>
           <input
             id="username"
             type="email"
@@ -157,7 +157,7 @@ class GenericAccountForm extends React.Component {
         </div>
 
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">密码</label>
           <input
             id="password"
             type="password"
@@ -172,11 +172,9 @@ class GenericAccountForm extends React.Component {
             className={`submit ${this.state.isLoadingNewAccount && "disabled"}`}
             onClick={this.handleAddAccount}
           >
-            Add account
-          </button>
+            添加账户</button>
           <button className="cancel" onClick={this.props.closeForm}>
-            Cancel
-          </button>
+            取消</button>
         </div>
       </div>
     );
@@ -186,12 +184,10 @@ class GenericAccountForm extends React.Component {
     return (
       <div>
         <p>
-          Account <span className="green">connected</span>! Customize the new
-          account below:
-        </p>
+          账户 <span className="green">connected</span>!在下面自定义新帐户：</p>
         <div>
           <label htmlFor="account-name">
-            Account display name (eg Work, Personal)
+            帐户显示名称（例如工作、个人）
           </label>
           <input
             id="account-name"
@@ -201,7 +197,7 @@ class GenericAccountForm extends React.Component {
         </div>
 
         <div>
-          <label htmlFor="address-email">Email address to send from</label>
+          <label htmlFor="address-email">发送的电子邮件地址</label>
           <input
             id="address-email"
             type="email"
@@ -211,7 +207,7 @@ class GenericAccountForm extends React.Component {
         </div>
 
         <div>
-          <label htmlFor="address-name">Name to send from</label>
+          <label htmlFor="address-name">发送的姓名</label>
           <input
             id="address-name"
             value={this.state.newAccountAddressName}
@@ -225,8 +221,7 @@ class GenericAccountForm extends React.Component {
             className="submit"
             onClick={this.handleCompleteAddAccount}
           >
-            Complete adding account
-          </button>
+           完成添加帐户</button>
         </div>
       </div>
     );
@@ -303,7 +298,7 @@ class OauthAccountFormMixin extends GenericAccountForm {
 
           if (data.json.did_autoconf) {
             this.setState({
-              newAccountError: "Authentication failed!",
+              newAccountError: "认证失败!",
               isLoadingNewAccount: false,
             });
             return;
@@ -339,8 +334,7 @@ class OauthAccountFormMixin extends GenericAccountForm {
       <div className="account-control-buttons">
         <span>Waiting for confirmation!</span>
         <button className="cancel" onClick={this.props.closeForm}>
-          Cancel
-        </button>
+          取消</button>
       </div>
     );
   }
@@ -384,8 +378,7 @@ class IcloudAccountForm extends GenericAccountForm {
         <a onClick={() => openLink(APPLE_APP_PASSWORD_LINK)}>
           app specific password
         </a>{" "}
-        for any non-Apple email access.
-      </p>
+        for any non-Apple email access.</p>
     );
   }
 }
@@ -532,29 +525,19 @@ export default class NewAccountForm extends React.Component {
       <form className="account new-account">
         <div className="new-account-buttons">
           <button onClick={_.partial(this.setAccountType, "gmail")}>
-            <img src={gmailLogo} />
-            Sign in with Google
-          </button>
+            <img src={gmailLogo} /> 使用 Google 登录</button>
           <button onClick={_.partial(this.setAccountType, "icloud")}>
-            <img src={icloudLogo} /> Add iCloud account
-          </button>
+            <img src={icloudLogo} /> 添加 iCloud 帐户</button>
           <button onClick={_.partial(this.setAccountType, "outlook")}>
-            <img src={outlookLogo} /> Add Outlook account
-          </button>
-          <button onClick={_.partial(this.setAccountType, "yahoo")}>
-            <img src={yahooLogo} /> Add Yahoo account
-          </button>
+            <img src={outlookLogo} /> 添加 Outlook 账户</button>
           <button onClick={_.partial(this.setAccountType, "generic")}>
-            <i className="fa fa-envelope" /> Add a different account
-          </button>
+            <i className="fa fa-envelope" /> 添加其他</button>
         </div>
         <div className="account-control-buttons">
           <button onClick={this.handleClickManualAddAccount}>
-            Custom IMAP/SMTP
-          </button>
+            自定义 IMAP/SMTP</button>
           <button className="cancel" onClick={this.props.closeForm}>
-            Cancel
-          </button>
+            取消</button>
         </div>
       </form>
     );

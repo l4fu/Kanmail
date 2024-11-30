@@ -43,7 +43,7 @@ export default class SignatureForm extends React.Component {
     ev.preventDefault();
 
     if (!this.state.name) {
-      this.setState({ error: "Please input a name for this signature." });
+      this.setState({ error: "请为此签名输入一个名称。" });
       return;
     }
 
@@ -80,12 +80,10 @@ export default class SignatureForm extends React.Component {
               className={saveButtonClasses.join(" ")}
               onClick={this.handleSubmit}
             >
-              {this.props.itemData ? "Update" : "Add Signature"}
-            </button>
+              {this.props.itemData ? "Update" : "Add Signature"}</button>
             &nbsp;
             <button type="submit" onClick={this.props.closeForm}>
-              Cancel
-            </button>
+              取消</button>
           </div>
           <input
             className="inline"

@@ -6,6 +6,8 @@ By purchasing a License Key and/or downloading and using the Software, You agree
 
 If you are entering into this EULA agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity and its affiliates to these terms and conditions. If you do not have such authority or if you do not agree with the terms and conditions of this EULA agreement, do not install or use the Software, and you must not accept this EULA agreement.
 
+https://mirrors.163.com/pypi/simple/ 
+
 ## License
 
 OxygemDigital Inc hereby grants you a personal, non-transferable, non-exclusive licence to use the Kanmail software on your devices in accordance with the terms of this EULA agreement.

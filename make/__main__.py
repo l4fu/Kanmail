@@ -35,7 +35,7 @@ def prepare_release():
     if not click.confirm(
         (
             f"\nGit Changes:\n{git_changes}\n\n"
-            f"Are you SURE you wish to start releasing v{version}?"
+            f"确定吗 you wish to start releasing v{version}?"
         )
     ):
         raise click.ClickException("User is not sure!")
@@ -192,7 +192,7 @@ def download_and_complete_release():
 
     if not click.confirm(
         (
-            f"Are you SURE v{version} is ready to release "
+            f"确定吗 v{version} is ready to release "
             "(commit changelog -> package -> sign -> upload)?"
         )
     ):

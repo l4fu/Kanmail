@@ -1,6 +1,7 @@
 *.pyc
 *.log
 .python-version
+.idea
 
 node_modules
 

@@ -400,7 +400,7 @@ export default class SendApp extends React.Component {
             checked={this.state.includeQuote}
             onChange={this.handleIncludeQuoteChange}
           />
-          <label htmlFor="include_quote">Include quote?</label>
+          <label htmlFor="include_quote">包括引号?</label>
         </div>
 
         {blockquote}
@@ -478,8 +478,7 @@ export default class SendApp extends React.Component {
         onClick={this.handleSendEmail}
         ref={makeNoDragElement}
       >
-        {text}
-      </button>
+        {text}</button>
     );
   }
 
@@ -497,8 +496,7 @@ export default class SendApp extends React.Component {
         onClick={this.handleSaveEmail}
         ref={makeNoDragElement}
       >
-        <i className="fa fa-save" /> {text}
-      </button>
+        <i className="fa fa-save" /> {text}</button>
     );
   }
 
@@ -514,8 +512,7 @@ export default class SendApp extends React.Component {
         onClick={this.handleClickAttach}
         ref={makeNoDragElement}
       >
-        <i className="fa fa-paperclip" /> {buttonText}
-      </button>
+        <i className="fa fa-paperclip" /> {buttonText}</button>
     );
 
     if (this.state.attachments.length === 0) {
@@ -611,7 +608,7 @@ export default class SendApp extends React.Component {
           onClick={stopEventPropagation}
           ref={makeDragElement}
         >
-          <h2>New Email</h2>
+          <h2>新邮件</h2>
           <div>
             {this.renderAttachButton()}
             {this.renderSaveButton()}

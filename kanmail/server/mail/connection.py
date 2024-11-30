@@ -62,14 +62,11 @@ class ImapConnectionWrapper(object):
 
             while True:
                 try:
+                    self.config.log("debug", (f"test:  {func}"), )
                     ret = func(*args, **kwargs)
 
                     took = (time() - start) * 1000
-                    self.config.log(
-                        "debug",
-                        (f"Completed IMAP action: " f"{key}({args}, {kwargs}) in {took}ms"),
-                    )
-
+                    self.config.log( "warning", (f"Completed IMAP action: " f"{key}({args}, {kwargs}) in {took}ms"), )
                     return ret
 
                 # Network issues/IMAP aborts - should fixed by reconnect

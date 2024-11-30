@@ -104,10 +104,9 @@ export default class Contact extends React.Component {
     if (this.state.deleteConfirm) {
       return (
         <div>
-          <button onClick={this.handleClickCancel}>Cancel</button>&nbsp;
+          <button onClick={this.handleClickCancel}>取消</button>&nbsp;
           <button className="cancel" onClick={this.handleClickDelete}>
-            Are you SURE?
-          </button>
+确定吗?</button>
         </div>
       );
     }
@@ -117,10 +116,9 @@ export default class Contact extends React.Component {
         return (
           <div>
             <button className="error" onClick={this.handleClickUpdate}>
-              Error: {this.state.saveError.data.errorMessage}
-            </button>
+              Error: {this.state.saveError.data.errorMessage}</button>
             &nbsp;
-            <button onClick={this.handleClickCancel}>Cancel</button>
+            <button onClick={this.handleClickCancel}>取消</button>
           </div>
         );
       }
@@ -128,20 +126,18 @@ export default class Contact extends React.Component {
       return (
         <div>
           <button className="submit" onClick={this.handleClickUpdate}>
-            Update
-          </button>
+            更新</button>
           &nbsp;
-          <button onClick={this.handleClickCancel}>Cancel</button>
+          <button onClick={this.handleClickCancel}>取消</button>
         </div>
       );
     }
 
     return (
       <div>
-        <button onClick={this.handleClickEdit}>Edit</button>&nbsp;
+        <button onClick={this.handleClickEdit}>编辑</button>&nbsp;
         <button onClick={this.handleClickDelete} className="cancel">
-          Delete
-        </button>
+          删除</button>
       </div>
     );
   }

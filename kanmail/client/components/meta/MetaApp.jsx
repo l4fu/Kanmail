@@ -22,15 +22,13 @@ export default class MetaApp extends React.Component {
             <a onClick={() => openLink(window.KANMAIL_WEBSITE_URL)}>
               Kanmail v{window.KANMAIL_VERSION}
             </a>
-            .
-          </p>
+            .</p>
           <p>
             <a onClick={() => openWindow("/meta-file/CHANGELOG.md")}>
               Changelog
             </a>
             &nbsp;&bull;&nbsp;
-            <a onClick={() => openWindow("/meta-file/LICENSE.md")}>License</a>
-          </p>
+            <a onClick={() => openWindow("/meta-file/LICENSE.md")}>License</a></p>
         </section>
       </section>
     );

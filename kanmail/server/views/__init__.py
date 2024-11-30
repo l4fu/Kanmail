@@ -69,8 +69,8 @@ def _get_render_data():
         "session_token": SESSION_TOKEN,
         "website_url": WEBSITE_URL,
         "device_id": get_device_id(),
-        "sentry_dsn": "" if DEACTIVATE_SENTRY else get_hidden_value("SENTRY_DSN"),
-        "posthog_api_key": "" if DEACTIVATE_POSTHOG else get_hidden_value("POSTHOG_API_KEY"),
+        # "sentry_dsn": "" if DEACTIVATE_SENTRY else get_hidden_value("SENTRY_DSN"),
+        # "posthog_api_key": "" if DEACTIVATE_POSTHOG else get_hidden_value("POSTHOG_API_KEY"),
         "disable_error_logging": get_system_setting("disable_error_logging"),
         "disable_analytics": get_system_setting("disable_analytics"),
     }

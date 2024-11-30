@@ -80,12 +80,11 @@ export default class Sidebar extends React.Component {
         <Filters />
 
         <footer>
-          <a onClick={openLicense}>
-            {window.KANMAIL_LICENSED ? "Licensed" : "Unlicensed"}
-          </a>
-          <br />
-          <a onClick={openMeta}>Kanmail v{window.KANMAIL_VERSION}</a>{" "}
-          {window.KANMAIL_DEBUG && "(debug)"}
+          {/*<a onClick={openLicense}>*/}
+          {/*  {window.KANMAIL_LICENSED ? "激活" : "未激活"}*/}
+          {/*</a>*/}
+          {/*<br />*/}
+          <a onClick={openMeta}>Kanmail_v{window.KANMAIL_VERSION}</a>{" "}-{window.KANMAIL_DEBUG && "(debug)"}
           <FooterStatus />
         </footer>
       </section>

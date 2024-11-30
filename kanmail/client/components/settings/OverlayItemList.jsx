@@ -161,8 +161,7 @@ export default class OverlayItemList extends React.Component {
       <div id="accounts">
         {this.renderItems()}
         <button className="submit" onClick={this.handleClickAddItem}>
-          Add new {this.props.newItemName}
-        </button>
+          添加 {this.props.newItemName}</button>
         {this.renderItemForm()}
       </div>
     );

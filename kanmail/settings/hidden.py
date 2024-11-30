@@ -16,8 +16,9 @@ VALID_HIDDEN_KEYS = (
 
 @lru_cache(maxsize=1)
 def get_hidden_data() -> Dict[str, str]:
-    hidden_data_filename = path.join(CLIENT_ROOT, "static", "dist", "hidden.json")
+    hidden_data_filename = path.join(CLIENT_ROOT, "dist", "hidden.json")
 
+    print ( hidden_data_filename )
     if not path.exists(hidden_data_filename):
         return {}
 

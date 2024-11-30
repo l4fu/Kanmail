@@ -53,15 +53,16 @@ if DEBUG and not DEBUG_SENTRY:
 elif get_system_setting("disable_error_logging") or DEACTIVATE_SENTRY:
     logger.debug("Disabling Sentry per user settings")
 else:
-    sentry_sdk.init(
-        dsn=get_hidden_value("SENTRY_DSN"),
-        release=f"kanmail-app@{get_version()}",
-        integrations=[FlaskIntegration()],
-        # Don't send stack variables, potentially containing email data
-        with_locals=False,
-    )
-    # Random identifier for this Kanmail install (no PII)
-    sentry_sdk.set_user({"id": get_device_id()})
+    # sentry_sdk.init(
+    #     dsn="http://127.0.0.1:4420",#get_hidden_value("SENTRY_DSN"),
+    #     release=f"kanmail-app@{get_version()}",
+    #     integrations=[FlaskIntegration()],
+    #     # Don't send stack variables, potentially containing email data
+    #     with_locals=False,
+    # )
+    # # Random identifier for this Kanmail install (no PII)
+    # sentry_sdk.set_user({"id": get_device_id()})
+    pass
 
 app = Flask(
     APP_NAME,
@@ -80,6 +81,9 @@ app.config["SQLALCHEMY_BINDS"] = {
 }
 db = SQLAlchemy(app)
 
+print(CLIENT_ROOT)
+print(CONTACTS_CACHE_DB_FILE)
+print(FOLDER_CACHE_DB_FILE)
 
 class ServerWithGetPort(Server):
     def get_port(self):
@@ -120,7 +124,10 @@ def add_public_route(*args, **kwargs):
 def boot(prepare_server: bool = True) -> None:
     if prepare_server:
         server.prepare()
-
+    print(11)
+    print(f"App client root is: {CLIENT_ROOT}")
+    print(f"App session token is: {SESSION_TOKEN}")
+    print(f"App server port: http://{SERVER_HOST}:{server.get_port()}")
     logger.debug(f"App client root is: {CLIENT_ROOT}")
     logger.debug(f"App session token is: {SESSION_TOKEN}")
     logger.debug(f"App server port: http://{SERVER_HOST}:{server.get_port()}")
@@ -130,13 +137,13 @@ def boot(prepare_server: bool = True) -> None:
         from kanmail.server.mail.connection_mocks import bootstrap_fake_connections
 
         bootstrap_fake_connections()
-
+    print("cccvxcv")
     from kanmail import secrets  # noqa: F401
     from kanmail.server.mail.allowed_images import AllowedImage  # noqa: F401
-
+    print(102)
     # Database models
     from kanmail.server.mail.contacts import Contact  # noqa: F401
-
+    print(101)
     # API views
     from kanmail.server.views import contacts_api  # noqa: F401
     from kanmail.server.views import error  # noqa: F401
@@ -150,5 +157,5 @@ def boot(prepare_server: bool = True) -> None:
         update_api,
         window_api,
     )
-
+    print(12)
     db.create_all()

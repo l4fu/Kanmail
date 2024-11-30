@@ -54,15 +54,13 @@ export default class AddNewContactForm extends React.Component {
     if (this.state.saveError) {
       return (
         <button className="error" onClick={this.handleClickSubmit}>
-          Error: {this.state.saveError.data.errorMessage}
-        </button>
+          Error: {this.state.saveError.data.errorMessage}</button>
       );
     }
 
     return (
       <button className="submit" onClick={this.handleClickSubmit}>
-        Add contact
-      </button>
+        添加联系人</button>
     );
   }
 
@@ -70,15 +68,14 @@ export default class AddNewContactForm extends React.Component {
     if (!this.props.isOpen) {
       return (
         <button className="submit add-contact" onClick={this.props.toggleForm}>
-          Add new contact
-        </button>
+          添加联系人</button>
       );
     }
 
     return (
       <form className="add-contact">
         <div>
-          <label htmlFor="name">New contact name</label>
+          <label htmlFor="name">新联系人名字</label>
           <input
             type="text"
             id="name"
@@ -87,7 +84,7 @@ export default class AddNewContactForm extends React.Component {
           />
         </div>
         <div>
-          <label htmlFor="email">New contact email</label>
+          <label htmlFor="email">新联系人邮箱</label>
           <input
             type="email"
             id="email"
@@ -96,7 +93,7 @@ export default class AddNewContactForm extends React.Component {
           />
         </div>
         {this.renderSaveButton()}&nbsp;
-        <button onClick={this.handleClickCancel}>Cancel</button>
+        <button onClick={this.handleClickCancel}>取消</button>
       </form>
     );
   }

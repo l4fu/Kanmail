@@ -148,8 +148,7 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
         onClick={this.handleSaveSettings}
         ref={makeNoDragElement}
       >
-        {text}
-      </button>
+        {text}</button>
     );
   }
 
@@ -207,8 +206,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
         <div className="flex">
           <div className="half">
             <label htmlFor="theme_light">
-              Light theme
-              <small>Theme to use when the system theme is light</small>
+              亮色主题
+              <small>系统主题为浅色时使用的主题</small>
             </label>
             <div className="select-wrapper">
               <Select
@@ -226,8 +225,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
           <div className="half">
             <label htmlFor="theme_dark">
-              Dark theme
-              <small>Theme to use when the system theme is dark</small>
+              暗色主题
+              <small>系统主题为暗色时使用的主题</small>
             </label>
             <div className="select-wrapper">
               <Select
@@ -245,7 +244,7 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
         </div>
 
         <div className="checkbox">
-          <label htmlFor="compact_columns">Use compact column layout</label>
+          <label htmlFor="compact_columns">使用紧凑的列布局</label>
           <input
             type="checkbox"
             id="compact_columns"
@@ -259,8 +258,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
         </div>
 
         <label htmlFor="sidebar_folders">
-          Sidebar folders
-          <small>Folders to pin in the sidebar</small>
+          侧边栏文件夹
+          <small>要固定在侧边栏中的文件夹</small>
         </label>
         <div className="select-wrapper">
           <Creatable
@@ -280,8 +279,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
         <div className="checkbox">
           <label htmlFor="group_single_sender_threads">
-            Group single sender threads
-            <small>Groups single message threads from the same sender</small>
+            对单个发件人线程进行分组
+            <small>对来自同一发件人的单个消息线程进行分组</small>
           </label>
           <input
             type="checkbox"
@@ -297,8 +296,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
         <div className="checkbox">
           <label htmlFor="load_contact_icons">
-            Load contact icons
-            <small>Lookup gravatars and favicons for contacts</small>
+            加载联系人图标
+            <small>查找联系人的收藏夹和收藏夹</small>
           </label>
           <input
             type="checkbox"
@@ -313,7 +312,7 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
         </div>
 
         <div className="checkbox">
-          <label htmlFor="show_help_button">Show help button</label>
+          <label htmlFor="show_help_button">显示帮助菜单 </label>
           <input
             type="checkbox"
             id="show_help_button"
@@ -334,8 +333,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
       <div>
         <div className="settings" id="style">
           <label htmlFor="undo_ms">
-            Undo time (ms)
-            <small>Length of time to undo actions</small>
+            撤消时间（ms）
+            <small>撤消操作的时间长度</small>
           </label>
           <input
             type="number"
@@ -349,8 +348,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
           />
 
           <label htmlFor="sync_interval">
-            Update interval (ms)
-            <small>How often to fetch new emails</small>
+            更新间隔（ms）
+            <small>多久获取一次新电子邮件</small>
           </label>
           <input
             required
@@ -365,9 +364,9 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
           />
 
           <label htmlFor="sync_days">
-            Sync days
+            同步天数
             <small>
-              Days of email to sync (0 = all), does not affect search
+              要同步的电子邮件天数（0=全部），不影响搜索
             </small>
           </label>
           <input
@@ -391,9 +390,9 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
             <div className="checkbox">
               <label htmlFor="disable_error_logging">
-                Disable error logging
+                禁用错误记录
                 <small>
-                  Prevent Kanmail sending anonymous error logs to Sentry
+                  禁止Kanmail向Sentry发送匿名错误日志--后台已禁止
                 </small>
               </label>
               <input
@@ -410,9 +409,9 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
             <div className="checkbox">
               <label htmlFor="disable_analytics">
-                Disable analytics
+                禁用分析
                 <small>
-                  Prevent Kanmail sending anonymous analytics to Posthog
+                  防止Kanmail向Posthog发送匿名分析--后台已禁止
                 </small>
               </label>
               <input
@@ -431,12 +430,12 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
 
         <div className="settings advanced" id="system">
           <div>
-            <i className="red fa fa-exclamation-triangle" /> Danger zone
+            <i className="red fa fa-exclamation-triangle" /> 危险设置
           </div>
 
           <label htmlFor="batch_size">
-            Batch size
-            <small>Number of emails to fetch at once.</small>
+            批量大小
+            <small>一次要获取的电子邮件数量</small>
           </label>
           <input
             required
@@ -451,8 +450,8 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
           />
 
           <label htmlFor="initial_batches">
-            Initial batches
-            <small>initial number of batches to fetch</small>
+            初始批次
+            <small>要提取的初始批次数</small>
           </label>
           <input
             required
@@ -467,26 +466,22 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
           />
 
           <label>
-            Clear cache
+            清空缓存
             <small>
-              Any settings changes will be lost,
-              <br />
-              will immediately reload the app
+              任何设置更改都将丢失，将立即重新加载应用程序
             </small>
           </label>
           <button className="cancel" onClick={this.handleBustCache}>
-            Clear the cache
-          </button>
+            清空缓存</button>
 
           {window.KANMAIL_LICENSED && (
             <div className="no-input">
               <label>
-                Update license
-                <small>Change or remove the license key</small>
+                更新授权
+                <small>修改或移除授权</small>
               </label>
               <button className="" onClick={openLicense}>
-                Open license settings
-              </button>
+                设置授权</button>
             </div>
           )}
         </div>
@@ -498,28 +493,25 @@ export default class SettingsApp extends AccountAndSignatureSettingsMixin {
     return (
       <section className="no-select">
         <header className="settings flex header-bar" ref={makeDragElement}>
-          <h2>Settings</h2>
+          <h2>设置</h2>
           <div className="button-set" ref={makeNoDragElement}>
             <button
               className={this.state.selectedTab === "accounts" ? "active" : ""}
               onClick={_.partial(this.selectTab, "accounts")}
             >
-              <i className="fa fa-envelope" /> Accounts
-            </button>
+              <i className="fa fa-envelope" /> 账户列表</button>
             <button
               className={
                 this.state.selectedTab === "appearance" ? "active" : ""
               }
               onClick={_.partial(this.selectTab, "appearance")}
             >
-              <i className="fa fa-paint-brush" /> Appearance
-            </button>
+              <i className="fa fa-paint-brush" /> 外观</button>
             <button
               className={this.state.selectedTab === "system" ? "active" : ""}
               onClick={_.partial(this.selectTab, "system")}
             >
-              <i className="fa fa-cog" /> System
-            </button>
+              <i className="fa fa-cog" /> 系统</button>
           </div>
           <div>{this.renderSaveButton()}</div>
         </header>

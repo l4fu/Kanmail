@@ -53,7 +53,7 @@ class AccountAddress extends React.Component {
     return (
       <div className="wide flex contact">
         <div className="contact-address">
-          <label>Name</label>
+          <label>名字</label>
           <input
             type="text"
             value={contactTuple[0]}
@@ -61,7 +61,7 @@ class AccountAddress extends React.Component {
           />
         </div>
         <div className="contact-address">
-          <label>Email</label>
+          <label>邮箱</label>
           <input
             type="text"
             value={contactTuple[1]}
@@ -73,8 +73,7 @@ class AccountAddress extends React.Component {
           className="cancel"
           onClick={this.props.deleteAddress}
         >
-          <i className="fa fa-times"></i>
-        </button>
+          <i className="fa fa-times"></i></button>
       </div>
     );
   }
@@ -132,7 +131,7 @@ export default class AccountForm extends React.Component {
     ev.preventDefault();
 
     if (!this.state.name) {
-      this.setState({ error: "Please input a name for this account." });
+      this.setState({ error: "请输入账户名称" });
       return;
     }
 
@@ -275,9 +274,9 @@ export default class AccountForm extends React.Component {
 
   renderConnectedText() {
     if (this.state.connected) {
-      return <small className="connected">connected</small>;
+      return <small className="connected">连接成功</small>;
     } else {
-      return <small className="not-connected">no connection</small>;
+      return <small className="not-connected">无连接</small>;
     }
   }
 
@@ -294,14 +293,14 @@ export default class AccountForm extends React.Component {
 
     return [
       <div className="half" key="username">
-        <label htmlFor={`${settingKey}-username`}>Username</label>
+        <label htmlFor={`${settingKey}-username`}>用户名</label>
         {this.renderInput(settingKey, "username")}
       </div>,
       <div className="half" key="password">
-        <label htmlFor={`${settingKey}-password`}>Password</label>
+        <label htmlFor={`${settingKey}-password`}>密码</label>
         {this.renderInput(settingKey, "password", {
           type: "password",
-          placeholder: "enter to change",
+          placeholder: "修改这里",
         })}
       </div>,
     ];
@@ -334,12 +333,10 @@ export default class AccountForm extends React.Component {
               className={saveButtonClasses.join(" ")}
               onClick={this.handleTestConnection}
             >
-              {this.props.isAddingNewAccount ? "Add account" : "Update"}
-            </button>
+              {this.props.isAddingNewAccount ? "添加账户" : "Update"}</button>
             &nbsp;
             <button type="submit" onClick={this.props.closeForm}>
-              Cancel
-            </button>
+              取消</button>
           </div>
           <input
             className="inline"
@@ -357,8 +354,7 @@ export default class AccountForm extends React.Component {
                 className={getTabButtonClass("address")}
                 onClick={_.partial(setTab, "address")}
               >
-                Addresses
-              </button>
+                地址</button>
             )}
             &nbsp;
             {this.props.isAddingNewAccount || (
@@ -366,23 +362,20 @@ export default class AccountForm extends React.Component {
                 className={getTabButtonClass("mailbox")}
                 onClick={_.partial(setTab, "mailbox")}
               >
-                Mailboxes
-              </button>
+                邮箱</button>
             )}
             &nbsp;
             <button
               className={getTabButtonClass("imap")}
               onClick={_.partial(setTab, "imap")}
             >
-              Incoming (IMAP) server
-            </button>
+              接收(IMAP) 服务器</button>
             &nbsp;
             <button
               className={getTabButtonClass("smtp")}
               onClick={_.partial(setTab, "smtp")}
             >
-              Outgoing (SMTP) server
-            </button>
+              发送（SMTP）服务器 </button>
           </div>
         </div>
 
@@ -392,14 +385,13 @@ export default class AccountForm extends React.Component {
             className="submit add-contact-button"
             onClick={this.handleAddAddress}
           >
-            Add address
-          </button>
+            添加地址</button>
         </div>
 
         <div className={this.state.editingTab == "mailbox" ? "wide" : "hidden"}>
           <div className="flex wide">
             <div className="half">
-              <label htmlFor="folderSettings-prefix">Folder prefix</label>
+              <label htmlFor="folderSettings-prefix">文件夹前缀</label>
               {this.renderInput("folderSettings", "prefix")}
             </div>
           </div>
@@ -426,7 +418,7 @@ export default class AccountForm extends React.Component {
                 className="checkbox"
                 htmlFor="folderSettings-save_sent_copies"
               >
-                Save copies of sent mail in the sent folder?
+                是否将已发送邮件的副本保存在已发送文件夹中?
               </label>
               {this.renderInput("folderSettings", "save_sent_copies", {
                 type: "checkbox",
@@ -437,7 +429,7 @@ export default class AccountForm extends React.Component {
                 className="checkbox"
                 htmlFor="folderSettings-delete_on_trash"
               >
-                Delete emails instead of moving to the trash folder?
+                删除电子邮件而不是移动到垃圾文件夹?
               </label>
               {this.renderInput("folderSettings", "delete_on_trash", {
                 type: "checkbox",
@@ -448,7 +440,7 @@ export default class AccountForm extends React.Component {
                 className="checkbox"
                 htmlFor="folderSettings-copy_from_inbox"
               >
-                Copy (not move) emails out of the inbox?
+                复制（而不是移动）收件箱中的电子邮件？
               </label>
               {this.renderInput("folderSettings", "copy_from_inbox", {
                 type: "checkbox",
@@ -464,18 +456,18 @@ export default class AccountForm extends React.Component {
           <div className="flex wide">
             {this.renderUsernamePassword("imapSettings")}
             <div className="three-quarter">
-              <label htmlFor="imapSettings-host">Hostname</label>
+              <label htmlFor="imapSettings-host">主机名</label>
               {this.renderInput("imapSettings", "host")}
             </div>
             <div className="quarter">
-              <label htmlFor="imapSettings-port">Port</label>
+              <label htmlFor="imapSettings-port">端口</label>
               {this.renderInput("imapSettings", "port", {
                 type: "number",
               })}
             </div>
             <div className="half">
               <label className="checkbox" htmlFor="imapSettings-ssl">
-                Use SSL?
+                使用 SSL?
               </label>
               {this.renderInput("imapSettings", "ssl", {
                 type: "checkbox",
@@ -497,7 +489,7 @@ export default class AccountForm extends React.Component {
                 </a>
                 ):
                 <br />
-                Verify SSL hostname?
+                验证 SSL 主机民?
               </label>
               {this.renderInput("imapSettings", "ssl_verify_hostname", {
                 type: "checkbox",
@@ -514,18 +506,18 @@ export default class AccountForm extends React.Component {
           <div className="flex wide">
             {this.renderUsernamePassword("smtpSettings")}
             <div className="three-quarter">
-              <label htmlFor="smtpSettings-host">Hostname</label>
+              <label htmlFor="smtpSettings-host">主机名</label>
               {this.renderInput("smtpSettings", "host")}
             </div>
             <div className="quarter">
-              <label htmlFor="smtpSettings-port">Port</label>
+              <label htmlFor="smtpSettings-port">端口</label>
               {this.renderInput("smtpSettings", "port", {
                 type: "number",
               })}
             </div>
             <div className="quarter">
               <label className="checkbox" htmlFor="smtpSettings-ssl">
-                Use SSL?
+                使用 SSL?
               </label>
               {this.renderInput("smtpSettings", "ssl", {
                 type: "checkbox",
@@ -533,7 +525,7 @@ export default class AccountForm extends React.Component {
             </div>
             <div className="quarter">
               <label className="checkbox" htmlFor="smtpSettings-tls">
-                Use TLS?
+                使用 TLS?
               </label>
               {this.renderInput("smtpSettings", "tls", {
                 type: "checkbox",
@@ -555,7 +547,7 @@ export default class AccountForm extends React.Component {
                 </a>
                 ):
                 <br />
-                Verify SSL hostname?
+                验证 SSL 主机名?
               </label>
               {this.renderInput("smtpSettings", "ssl_verify_hostname", {
                 type: "checkbox",

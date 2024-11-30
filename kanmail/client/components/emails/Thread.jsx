@@ -94,7 +94,7 @@ class Thread extends React.Component {
     }
 
     if (fetchingFailed) {
-      return <p>Failed to fetch thread messages!</p>;
+      return <p>获取消息失败!</p>;
     }
 
     let seenUnread = false;
@@ -129,13 +129,12 @@ class Thread extends React.Component {
           className="previous-column"
           onClick={keyboard.selectPreviousColumnThread}
         >
-          <i className="fa fa-arrow-left" /> Previous column
+          <i className="fa fa-arrow-left" /> 上一列
           <span>
             {_.truncate(this.props.previousColumnThread[0].subject, {
               length: 32,
             })}
-          </span>
-        </button>
+          </span></button>
       );
     }
 
@@ -146,11 +145,10 @@ class Thread extends React.Component {
           className="next-column"
           onClick={keyboard.selectNextColumnThread}
         >
-          <i className="fa fa-arrow-right" /> Next column
+          <i className="fa fa-arrow-right" /> 下一列
           <span>
             {_.truncate(this.props.nextColumnThread[0].subject, { length: 32 })}
-          </span>
-        </button>
+          </span></button>
       );
     }
 
@@ -161,11 +159,10 @@ class Thread extends React.Component {
           className="previous-thread"
           onClick={keyboard.selectPreviousThread}
         >
-          <i className="fa fa-arrow-up" /> Previous thread
+          <i className="fa fa-arrow-up" /> 上一条线索
           <span>
             {_.truncate(this.props.previousThread[0].subject, { length: 32 })}
-          </span>
-        </button>
+          </span></button>
       );
     }
 
@@ -176,11 +173,10 @@ class Thread extends React.Component {
           className="next-thread"
           onClick={keyboard.selectNextThread}
         >
-          <i className="fa fa-arrow-down" /> Next thread
+          <i className="fa fa-arrow-down" /> 下一条线索
           <span>
             {_.truncate(this.props.nextThread[0].subject, { length: 32 })}
-          </span>
-        </button>
+          </span></button>
       );
     }
 
@@ -194,15 +190,13 @@ class Thread extends React.Component {
 
     return [
       <button key="reply" className="reply" onClick={this.handleClickReply}>
-        <i className="fa fa-reply" /> Reply
-      </button>,
+        <i className="fa fa-reply" /> 回复</button>,
       <button
         key="reply-all"
         className="reply-all"
         onClick={this.handleClickReplyAll}
       >
-        <i className="fa fa-reply-all" /> Reply All
-      </button>,
+        <i className="fa fa-reply-all" /> 回复全部</button>,
     ];
   }
 
@@ -222,19 +216,16 @@ class Thread extends React.Component {
           <section id="content">{this.renderContent()}</section>
           <section id="meta">
             <button id="close" onClick={this.handleClickClose}>
-              <i className="fa fa-times" /> Close
-            </button>
+              <i className="fa fa-times" /> 关闭</button>
             {this.renderOtherThreadButtons()}
             <div id="respond-buttons">
               <button
                 className="archive"
                 onClick={keyboard.archiveCurrentThread}
               >
-                <i className="fa fa-archive" /> Archive
-              </button>
+                <i className="fa fa-archive" /> 归档</button>
               <button className="trash" onClick={keyboard.trashCurrentThread}>
-                <i className="fa fa-trash" /> Trash
-              </button>
+                <i className="fa fa-trash" /> 垃圾箱</button>
               {this.renderReplyButtons()}
             </div>
           </section>

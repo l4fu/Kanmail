@@ -34,7 +34,6 @@ def run_server():
     except Exception as e:
         logger.exception(f"Exception in server thread!: {e}")
 
-
 def monitor_threads(*threads):
     while True:
         for thread in threads:
@@ -45,7 +44,6 @@ def monitor_threads(*threads):
                 sys.exit(2)
         else:
             sleep(0.5)
-
 
 def run_thread(target):
     def wrapper(thread_name):
@@ -64,20 +62,22 @@ def run_thread(target):
 
 def main():
     logger.info(f"\n#\n# Booting Kanmail {get_version()}\n#")
-
+    print(1)
     init_window_hacks()
+    print(2)
     boot()
-
+    print(3)
     server_thread = Thread(name="Server", target=run_server)
     server_thread.daemon = True
     server_thread.start()
-
+    print(4)
     run_thread(validate_or_remove_license)
     run_thread(run_cache_cleanup_later)
-
+    print(5)
     # Ensure the webserver is up & running by polling it
     waits = 0
     while waits < 10:
+        print(6)
         try:
             response = requests.get(f"http://{SERVER_HOST}:{server.get_port()}/ping")
             response.raise_for_status()
@@ -104,14 +104,15 @@ def main():
     )
     monitor_thread.daemon = True
     monitor_thread.start()
-
+    print(7)
     if DEBUG:
         sleep(1)  # give webpack a second to start listening
 
     # Start the GUI - this will block until the main window is destroyed
     webview.start(gui=GUI_LIB, debug=DEBUG)
-
+    print(8)
     logger.debug("Main window closed, shutting down...")
+    print(9)
     server.stop()
     sys.exit()
 

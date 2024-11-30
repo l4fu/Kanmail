@@ -329,15 +329,15 @@ export default class Filters extends React.Component {
   render() {
     return (
       <div id="filters">
-        {!window.KANMAIL_LICENSED && (
-          <ul>
-            <li>
-              <a onClick={() => openLink("https://kanmail.io/license")}>
-                <i className="fa fa-shopping-cart green"></i> Purchase Kanmail
-              </a>
-            </li>
-          </ul>
-        )}
+        {/*{!window.KANMAIL_LICENSED && (*/}
+        {/*  <ul>*/}
+        {/*    <li>*/}
+        {/*      <a onClick={() => openLink("https://kanmail.io/license")}>*/}
+        {/*        <i className="fa fa-shopping-cart green"></i> 购买 Kanmail*/}
+        {/*      </a>*/}
+        {/*    </li>*/}
+        {/*  </ul>*/}
+        {/*)}*/}
 
         <ul>
           {this.renderMainFolderLinks()}
@@ -347,7 +347,7 @@ export default class Filters extends React.Component {
         <ul>
           <li className={_.isNull(this.props.accountName) ? "active" : ""}>
             <a onClick={_.partial(this.setAccountFilter, null)}>
-              <i className="fa fa-globe white"></i> All accounts
+              <i className="fa fa-globe white"></i> 全部账户
             </a>
           </li>
           {this.renderAccounts()}
@@ -356,19 +356,19 @@ export default class Filters extends React.Component {
         <ul>
           <li>
             <a onClick={openContacts}>
-              <i className="fa fa-address-book"></i> Contacts
+              <i className="fa fa-address-book"></i> 联系人
             </a>
           </li>
           <li>
             <a onClick={openSettings}>
-              <i className="fa fa-cog"></i> Settings
+              <i className="fa fa-cog"></i> 设置
             </a>
           </li>
 
           {settingsStore.props.systemSettings.show_help_button && (
             <li>
               <a onClick={() => openLink("https://kanmail.io/docs")}>
-                <i className="fa fa-support"></i> Help
+                <i className="fa fa-support"></i> 帮助
               </a>
             </li>
           )}

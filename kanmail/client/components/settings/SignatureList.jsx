@@ -52,11 +52,10 @@ class SignatureListItem extends React.Component {
     if (this.state.deleteConfirm) {
       return (
         <div className="right">
-          <button onClick={this.handleClickCancel}>Cancel</button>
+          <button onClick={this.handleClickCancel}>取消</button>
           &nbsp;
           <button className="cancel" onClick={this.handleClickDelete}>
-            Are you SURE?
-          </button>
+确定吗?</button>
         </div>
       );
     }
@@ -64,18 +63,15 @@ class SignatureListItem extends React.Component {
     return (
       <div className="right">
         <button onClick={this.props.moveUp} className="inactive">
-          <i className="fa fa-arrow-up"></i>
-        </button>
+          <i className="fa fa-arrow-up"></i></button>
         &nbsp;
         <button onClick={this.props.moveDown} className="inactive">
-          <i className="fa fa-arrow-down"></i>
-        </button>
+          <i className="fa fa-arrow-down"></i></button>
         &nbsp;
         <button onClick={this.handleClickEdit}>Edit</button>
         &nbsp;
         <button onClick={this.handleClickDelete} className="cancel">
-          {this.state.deleteConfirm ? "Are you SURE?" : "Delete"}
-        </button>
+          {this.state.deleteConfirm ? "确定吗?" : "Delete"}</button>
       </div>
     );
   }

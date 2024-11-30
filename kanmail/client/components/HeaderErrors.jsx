@@ -53,8 +53,7 @@ ${traceback}`;
           ref={(textarea) => {
             this.textarea = textarea;
           }}
-        />
-      </p>
+        /></p>
     );
   }
 }
@@ -74,12 +73,10 @@ export default class HeaderErrors extends Component {
     return (
       <div className="icon-wrapper">
         <div className="icon-contents">
-          <strong>Kanmail encountered a serious sync or UI error.</strong>
+          <strong>Kanmail遇到严重的同步或UI错误.</strong>
           <p>
-            Click the icon to reload Kanmail or use the information below to
-            submit a bug report.{" "}
-            <a onClick={() => openLink(SUPPORT_DOC_LINK)}>More information</a>.
-          </p>
+            点击图标重新加载Kanmail或使用以下信息提交错误报告.{" "}
+            <a onClick={() => openLink(SUPPORT_DOC_LINK)}>更多信息</a>.</p>
           {_.map(this.props.requestErrors, (error, key) => (
             <RequestError error={error} key={key} />
           ))}

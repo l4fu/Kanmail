@@ -86,8 +86,7 @@ export default class ContactsApp extends React.Component {
           </div>
           <div>
             <button onClick={this.toggleForm} ref={makeNoDragElement}>
-              <i className="fa fa-user-plus"></i> Add Contact
-            </button>
+              <i className="fa fa-user-plus"></i> 添加联系人</button>
           </div>
         </header>
 

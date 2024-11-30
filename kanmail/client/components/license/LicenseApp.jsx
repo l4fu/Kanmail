@@ -69,8 +69,7 @@ export default class LicenseApp extends React.Component {
           className={classes.join(" ")}
           onClick={this.handleValidateLicense}
         >
-          {text}
-        </button>
+          {text}</button>
       );
     }
 
@@ -80,8 +79,7 @@ export default class LicenseApp extends React.Component {
         className="main-button submit"
         onClick={this.handleValidateLicense}
       >
-        Validate license key &rarr;
-      </button>
+        验证授权码 &rarr;</button>
     );
   }
 
@@ -89,19 +87,17 @@ export default class LicenseApp extends React.Component {
     if (window.KANMAIL_LICENSED) {
       return (
         <div>
-          <p>Thank you for purchasing a Kanmail license!</p>
+          <p>感谢您购买Kanmail许可证！</p>
           <p>
-            Kanmail is licensed to:{" "}
-            <strong>{window.KANMAIL_LICENSE_EMAIL}</strong>
-          </p>
+            Kanmail 授权给:{" "}
+            <strong>{window.KANMAIL_LICENSE_EMAIL}</strong></p>
           <form>
             <button
               type="submit"
               className="main-button cancel"
               onClick={this.handleRemoveLicense}
             >
-              Remove license
-            </button>
+              移除授权</button>
           </form>
         </div>
       );
@@ -110,14 +106,7 @@ export default class LicenseApp extends React.Component {
     return (
       <div>
         <p>
-          Hello Kanmail user! Kanmail is developed by a tiny team and a single
-          license key purchase goes a long way. If you use Kanmail regularly and
-          get value out of it, please consider{" "}
-          <a onClick={() => openLink(`${window.KANMAIL_WEBSITE_URL}/license`)}>
-            purchasing a license
-          </a>
-          .
-        </p>
+          您好，Kanmail用户！Kanmail是由一个小团队开发。如果您经常使用Kanmail从中获得价值，请考虑{" "}<a onClick={() => openLink(`${window.KANMAIL_WEBSITE_URL}/license`)}>购买许可证</a>.</p>
         <form>
           <textarea
             placeholder="Paste license here"
@@ -135,11 +124,11 @@ export default class LicenseApp extends React.Component {
     return (
       <section className="no-select">
         <header className="meta header-bar" ref={makeDragElement}>
-          <h2>Manage License</h2>
+          <h2>管理授权</h2>
         </header>
 
         <section id="license">
-          <h2>Kanmail License</h2>
+          <h2>Kanmail 授权</h2>
           {this.renderContent()}
         </section>
       </section>
